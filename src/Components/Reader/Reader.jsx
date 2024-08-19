@@ -11,8 +11,7 @@ export default function Reader({ dataSet }) {
     setClicks(clicks - 1);
   };
 
-  const lastValue = dataSet.length;
-  let startValue = 0;
+  const currentItem = dataSet[clicks];
 
   return (
     <div className={css.mainBorder}>
@@ -39,8 +38,8 @@ export default function Reader({ dataSet }) {
         </li>
       </ul>
       <div className={css.text}>
-        <h3 className={css.title}>{dataSet[clicks].topic} </h3>
-        <p className={css.article}>{dataSet[clicks].text}</p>
+        <h3 className={css.title}>{currentItem.topic} </h3>
+        <p className={css.article}>{currentItem.text}</p>
       </div>
     </div>
   );
