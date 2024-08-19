@@ -1,0 +1,32 @@
+.mainBorder {
+  border: 1px solid #000;
+  width: 650px;
+  min-height: 600px;
+  margin-block: 30px;
+}
+
+.btnFlex {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+  align-items: center;
+}
+
+.text {
+  border: 1px solid #000;
+  width: 550px;
+  min-height: 400px;
+  margin: 25px auto;
+}
+
+.title {
+  font-size: 3em;
+  margin: 25px 45px;
+  text-align: start;
+}
+
+.article {
+  color: #fff;
+  margin: 25px 45px;
+  text-align: start;
+}
