@@ -1,8 +1,20 @@
 import css from "./Reader.module.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Reader({ dataSet }) {
-  const [clicks, setClicks] = useState(0);
+  const [clicks, setClicks] = useState(() => {
+    const savedIndex = JSON.parse(window.localStorage.getItem("pageIndex"));
+
+    if (savedIndex !== null) {
+      return Number(savedIndex);
+    }
+
+    return 0;
+  });
+
+  useEffect(() => {
+    window.localStorage.setItem("pageIndex", JSON.stringify(clicks));
+  }, [clicks]);
 
   const increaseClicks = () => {
     setClicks(clicks + 1);
